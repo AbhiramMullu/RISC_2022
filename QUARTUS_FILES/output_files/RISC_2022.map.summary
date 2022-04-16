@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sun Apr 17 00:35:11 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : RISC_2022
+Top-level Entity Name : IITB_RISC
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 337
+Total pins : 20
+Total virtual pins : 0
+Total block memory bits : 524,288
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

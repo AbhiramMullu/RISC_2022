@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Apr 17 00:39:37 2022
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : RISC_2022
+Top-level Entity Name : IITB_RISC
+Family : Cyclone V
+Device : 5CGXFC7C7F23C8
+Timing Models : Final
+Logic utilization (in ALMs) : 380 / 56,480 ( < 1 % )
+Total registers : 400
+Total pins : 20 / 268 ( 7 % )
+Total virtual pins : 0
+Total block memory bits : 524,288 / 7,024,640 ( 7 % )
+Total RAM Blocks : 64 / 686 ( 9 % )
+Total DSP Blocks : 0 / 156 ( 0 % )
+Total HSSI RX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
+Total HSSI TX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
+Total PLLs : 0 / 13 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

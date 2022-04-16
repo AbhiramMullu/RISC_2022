@@ -1,0 +1,39 @@
+
+State Machine - |IITB_RISC|control_path:control|Q
+Name Q.S16 Q.S15 Q.S14 Q.S13 Q.S12 Q.S11 Q.S10 Q.S9 Q.S8 Q.S7 Q.S6 Q.S5 Q.S4 Q.S3 Q.S2 Q.S1 Q.S0 Q.B1 Q.B0 
+Q.B0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Q.B1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+Q.S0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+Q.S1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+Q.S2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+Q.S3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+Q.S4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+Q.S5 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+Q.S6 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+Q.S7 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+Q.S8 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+Q.S9 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+Q.S10 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+Q.S11 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Q.S12 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Q.S13 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Q.S14 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Q.S15 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Q.S16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |IITB_RISC|data_path:data|bootload:bootload_instance|control_bootload:control_path|Q
+Name Q.S4 Q.S3_2 Q.S3_1 Q.S2_2 Q.S2_1 Q.S1 Q.S0 
+Q.S0 0 0 0 0 0 0 0 
+Q.S1 0 0 0 0 0 1 1 
+Q.S2_1 0 0 0 0 1 0 1 
+Q.S2_2 0 0 0 1 0 0 1 
+Q.S3_1 0 0 1 0 0 0 1 
+Q.S3_2 0 1 0 0 0 0 1 
+Q.S4 1 0 0 0 0 0 1 
+
+State Machine - |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c|Q
+Name Q.valid_chk Q.receive Q.receive_chk Q.ready 
+Q.ready 0 0 0 0 
+Q.receive_chk 0 0 1 1 
+Q.receive 0 1 0 1 
+Q.valid_chk 1 0 0 1 

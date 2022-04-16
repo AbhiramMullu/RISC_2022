@@ -1,0 +1,89 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "P0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[7]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[8]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[9]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[10]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[11]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[12]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[13]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[14]",
+					"strict" : false
+				},
+				{
+					"name" : "P0[15]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_bar",
+					"strict" : false
+				},
+				{
+					"name" : "bootload_bar",
+					"strict" : false
+				},
+				{
+					"name" : "RX",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

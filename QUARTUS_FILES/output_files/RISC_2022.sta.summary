@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -10.042
+TNS   : -18192.048
+
+Type  : Slow 1100mV 85C Model Setup 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : -3.554
+TNS   : -96.221
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.213
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : 0.852
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.166
+TNS   : -10000.289
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : -0.724
+TNS   : -36.574
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -10.022
+TNS   : -17778.487
+
+Type  : Slow 1100mV 0C Model Setup 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : -3.574
+TNS   : -92.075
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : -0.037
+TNS   : -0.037
+
+Type  : Slow 1100mV 0C Model Hold 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : 0.893
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.166
+TNS   : -9989.761
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : -0.724
+TNS   : -34.395
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -4.084
+TNS   : -7264.569
+
+Type  : Fast 1100mV 85C Model Setup 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : -1.045
+TNS   : -25.234
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -2.174
+TNS   : -6341.782
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : 0.136
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -3.585
+TNS   : -6346.012
+
+Type  : Fast 1100mV 0C Model Setup 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : -0.921
+TNS   : -21.475
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.092
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -2.174
+TNS   : -6343.903
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk'
+Slack : 0.138
+TNS   : 0.000
+
+------------------------------------------------------------

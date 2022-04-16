@@ -1,0 +1,1258 @@
+Analysis & Synthesis report for RISC_2022
+Sun Apr 17 00:35:11 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |IITB_RISC|control_path:control|Q
+ 10. State Machine - |IITB_RISC|data_path:data|bootload:bootload_instance|control_bootload:control_path|Q
+ 11. State Machine - |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c|Q
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated
+ 17. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:addr
+ 18. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:dat
+ 19. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:count
+ 20. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:rx_reg
+ 21. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:data_reg
+ 22. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt1_reg
+ 23. Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt2_reg
+ 24. Parameter Settings for User Entity Instance: data_path:data|my_reg:instruction_register
+ 25. Parameter Settings for User Entity Instance: data_path:data|register_file:rf
+ 26. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:0:REG
+ 27. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:1:REG
+ 28. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:2:REG
+ 29. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:3:REG
+ 30. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:4:REG
+ 31. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:5:REG
+ 32. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:6:REG
+ 33. Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:7:REG
+ 34. Parameter Settings for User Entity Instance: data_path:data|ls_multiple:pe_block
+ 35. Parameter Settings for User Entity Instance: data_path:data|ls_multiple:pe_block|p_encoder:PE
+ 36. Parameter Settings for User Entity Instance: data_path:data|ls_multiple:pe_block|my_reg:T
+ 37. Parameter Settings for User Entity Instance: data_path:data|sign_extend:sign_extend_1
+ 38. Parameter Settings for User Entity Instance: data_path:data|sign_extend:sign_extend_2
+ 39. Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance
+ 40. Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0
+ 41. Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:0:CARRYX
+ 42. Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:1:CARRYX
+ 43. Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:2:CARRYX
+ 44. Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:3:CARRYX
+ 45. Parameter Settings for User Entity Instance: data_path:data|ram:mem|altsyncram:altsyncram_component
+ 46. Parameter Settings for User Entity Instance: data_path:data|my_reg:T1_Reg
+ 47. Parameter Settings for User Entity Instance: data_path:data|my_reg:T2_reg
+ 48. Parameter Settings for User Entity Instance: data_path:data|my_reg:Carry_CCR
+ 49. Parameter Settings for User Entity Instance: data_path:data|my_reg:Zero_CCR
+ 50. Parameter Settings for User Entity Instance: data_path:data|my_reg:Overflow_CCR
+ 51. Parameter Settings for User Entity Instance: data_path:data|my_reg:E1_reg
+ 52. Parameter Settings for User Entity Instance: data_path:data|my_reg:E2_reg
+ 53. Parameter Settings for User Entity Instance: data_path:data|my_reg:PC_reg
+ 54. Parameter Settings for User Entity Instance: data_path:data|my_reg:B_flop
+ 55. altsyncram Parameter Settings by Entity Instance
+ 56. Port Connectivity Checks: "data_path:data|my_reg:E2_reg"
+ 57. Port Connectivity Checks: "data_path:data|my_reg:E1_reg"
+ 58. Port Connectivity Checks: "data_path:data|alu:alu_instance|adder:ADD0"
+ 59. Port Connectivity Checks: "data_path:data|alu:alu_instance"
+ 60. Port Connectivity Checks: "data_path:data|ls_multiple:pe_block"
+ 61. Port Connectivity Checks: "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:rx_reg"
+ 62. Port Connectivity Checks: "data_path:data|bootload:bootload_instance"
+ 63. Post-Synthesis Netlist Statistics for Top Partition
+ 64. Elapsed Time Per Partition
+ 65. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Apr 17 00:35:11 2022       ;
+; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                   ; RISC_2022                                   ;
+; Top-level Entity Name           ; IITB_RISC                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 337                                         ;
+; Total pins                      ; 20                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 524,288                                     ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; IITB_RISC          ; RISC_2022          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; uart_receive.vhd                 ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd       ;         ;
+; sign_extend.vhd                  ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/sign_extend.vhd        ;         ;
+; register_file.vhd                ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/register_file.vhd      ;         ;
+; ram.vhd                          ; yes             ; User Wizard-Generated File   ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ram.vhd                ;         ;
+; p_encoder.vhd                    ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/p_encoder.vhd          ;         ;
+; ls_multiple.vhd                  ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ls_multiple.vhd        ;         ;
+; IITB_RISC.vhd                    ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/IITB_RISC.vhd          ;         ;
+; data_path.vhd                    ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd          ;         ;
+; control_path.vhd                 ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/control_path.vhd       ;         ;
+; bootload.vhd                     ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd           ;         ;
+; basic_primitive.vhd              ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic_primitive.vhd    ;         ;
+; basic.vhd                        ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd              ;         ;
+; alu.vhd                          ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/alu.vhd                ;         ;
+; adder.vhd                        ; yes             ; User VHDL File               ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd              ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc          ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc              ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
+; db/altsyncram_ksv3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/altsyncram_ksv3.tdf ;         ;
+; db/decode_8la.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/decode_8la.tdf      ;         ;
+; db/decode_11a.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/decode_11a.tdf      ;         ;
+; db/mux_7hb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/mux_7hb.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 372             ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 529             ;
+;     -- 7 input functions                    ; 10              ;
+;     -- 6 input functions                    ; 186             ;
+;     -- 5 input functions                    ; 132             ;
+;     -- 4 input functions                    ; 43              ;
+;     -- <=3 input functions                  ; 158             ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 337             ;
+;                                             ;                 ;
+; I/O pins                                    ; 20              ;
+; Total MLAB memory bits                      ; 0               ;
+; Total block memory bits                     ; 524288          ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; reset_bar~input ;
+; Maximum fan-out                             ; 395             ;
+; Total fan-out                               ; 4991            ;
+; Average fan-out                             ; 5.15            ;
++---------------------------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                          ; Entity Name          ; Library Name ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |IITB_RISC                                           ; 529 (1)             ; 337 (0)                   ; 524288            ; 0          ; 20   ; 0            ; |IITB_RISC                                                                                                                                   ; IITB_RISC            ; work         ;
+;    |control_path:control|                            ; 49 (49)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|control_path:control                                                                                                              ; control_path         ; work         ;
+;    |data_path:data|                                  ; 479 (184)           ; 318 (0)                   ; 524288            ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data                                                                                                                    ; data_path            ; work         ;
+;       |alu:alu_instance|                             ; 38 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance                                                                                                   ; alu                  ; work         ;
+;          |adder:ADD0|                                ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0                                                                                        ; adder                ; work         ;
+;             |carry_generate:\carry_element:0:CARRYX| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:0:CARRYX                                                 ; carry_generate       ; work         ;
+;             |carry_generate:\carry_element:1:CARRYX| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:1:CARRYX                                                 ; carry_generate       ; work         ;
+;             |carry_generate:\carry_element:2:CARRYX| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:2:CARRYX                                                 ; carry_generate       ; work         ;
+;             |carry_generate:\carry_element:3:CARRYX| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:3:CARRYX                                                 ; carry_generate       ; work         ;
+;             |full_adder:\adder_element:10:ADDX|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|full_adder:\adder_element:10:ADDX                                                      ; full_adder           ; work         ;
+;             |full_adder:\adder_element:12:ADDX|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|full_adder:\adder_element:12:ADDX                                                      ; full_adder           ; work         ;
+;             |full_adder:\adder_element:15:ADDX|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|full_adder:\adder_element:15:ADDX                                                      ; full_adder           ; work         ;
+;             |full_adder:\adder_element:5:ADDX|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|alu:alu_instance|adder:ADD0|full_adder:\adder_element:5:ADDX                                                       ; full_adder           ; work         ;
+;       |bootload:bootload_instance|                   ; 98 (0)              ; 80 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance                                                                                         ; bootload             ; work         ;
+;          |control_bootload:control_path|             ; 18 (18)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|control_bootload:control_path                                                           ; control_bootload     ; work         ;
+;          |data_bootload:data_path|                   ; 80 (38)             ; 73 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path                                                                 ; data_bootload        ; work         ;
+;             |my_reg:addr|                            ; 0 (0)               ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:addr                                                     ; my_reg               ; work         ;
+;             |my_reg:count|                           ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:count                                                    ; my_reg               ; work         ;
+;             |my_reg:dat|                             ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:dat                                                      ; my_reg               ; work         ;
+;             |uart_receive:reception|                 ; 42 (22)             ; 33 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception                                          ; uart_receive         ; work         ;
+;                |control_path_receive:c|              ; 10 (10)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c                   ; control_path_receive ; work         ;
+;                |data_path_receive:d|                 ; 10 (3)              ; 18 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d                      ; data_path_receive    ; work         ;
+;                   |my_reg_prim:cnt1_reg|             ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt1_reg ; my_reg_prim          ; work         ;
+;                   |my_reg_prim:cnt2_reg|             ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt2_reg ; my_reg_prim          ; work         ;
+;                   |my_reg_prim:data_reg|             ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:data_reg ; my_reg_prim          ; work         ;
+;                   |my_reg_prim:rx_reg|               ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:rx_reg   ; my_reg_prim          ; work         ;
+;       |ls_multiple:pe_block|                         ; 20 (12)             ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ls_multiple:pe_block                                                                                               ; ls_multiple          ; work         ;
+;          |my_reg:T|                                  ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ls_multiple:pe_block|my_reg:T                                                                                      ; my_reg               ; work         ;
+;          |p_encoder:PE|                              ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ls_multiple:pe_block|p_encoder:PE                                                                                  ; p_encoder            ; work         ;
+;       |my_reg:B_flop|                                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:B_flop                                                                                                      ; my_reg               ; work         ;
+;       |my_reg:Carry_CCR|                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:Carry_CCR                                                                                                   ; my_reg               ; work         ;
+;       |my_reg:E1_reg|                                ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:E1_reg                                                                                                      ; my_reg               ; work         ;
+;       |my_reg:E2_reg|                                ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:E2_reg                                                                                                      ; my_reg               ; work         ;
+;       |my_reg:Overflow_CCR|                          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:Overflow_CCR                                                                                                ; my_reg               ; work         ;
+;       |my_reg:PC_reg|                                ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:PC_reg                                                                                                      ; my_reg               ; work         ;
+;       |my_reg:T1_Reg|                                ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:T1_Reg                                                                                                      ; my_reg               ; work         ;
+;       |my_reg:T2_reg|                                ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:T2_reg                                                                                                      ; my_reg               ; work         ;
+;       |my_reg:Zero_CCR|                              ; 6 (6)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:Zero_CCR                                                                                                    ; my_reg               ; work         ;
+;       |my_reg:instruction_register|                  ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|my_reg:instruction_register                                                                                        ; my_reg               ; work         ;
+;       |ram:mem|                                      ; 28 (0)              ; 2 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ram:mem                                                                                                            ; ram                  ; work         ;
+;          |altsyncram:altsyncram_component|           ; 28 (0)              ; 2 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ram:mem|altsyncram:altsyncram_component                                                                            ; altsyncram           ; work         ;
+;             |altsyncram_ksv3:auto_generated|         ; 28 (0)              ; 2 (2)                     ; 524288            ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated                                             ; altsyncram_ksv3      ; work         ;
+;                |decode_11a:rden_decode|              ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|decode_11a:rden_decode                      ; decode_11a           ; work         ;
+;                |decode_8la:decode3|                  ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|decode_8la:decode3                          ; decode_8la           ; work         ;
+;                |mux_7hb:mux2|                        ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|mux_7hb:mux2                                ; mux_7hb              ; work         ;
+;       |register_file:rf|                             ; 105 (105)           ; 128 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf                                                                                                   ; register_file        ; work         ;
+;          |my_reg:\GEN_REG:0:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:0:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:1:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:1:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:2:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:2:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:3:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:3:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:4:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:4:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:5:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:5:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:6:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:6:REG                                                                             ; my_reg               ; work         ;
+;          |my_reg:\GEN_REG:7:REG|                     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |IITB_RISC|data_path:data|register_file:rf|my_reg:\GEN_REG:7:REG                                                                             ; my_reg               ; work         ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                  ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
+; data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 32768        ; 16           ; --           ; --           ; 524288 ; None ;
++--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |IITB_RISC|control_path:control|Q                                                                                                 ;
++-------+-------+-------+-------+-------+-------+-------+-------+------+------+------+------+------+------+------+------+------+------+------+------+
+; Name  ; Q.S16 ; Q.S15 ; Q.S14 ; Q.S13 ; Q.S12 ; Q.S11 ; Q.S10 ; Q.S9 ; Q.S8 ; Q.S7 ; Q.S6 ; Q.S5 ; Q.S4 ; Q.S3 ; Q.S2 ; Q.S1 ; Q.S0 ; Q.B1 ; Q.B0 ;
++-------+-------+-------+-------+-------+-------+-------+-------+------+------+------+------+------+------+------+------+------+------+------+------+
+; Q.B0  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ;
+; Q.B1  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 1    ;
+; Q.S0  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 1    ;
+; Q.S1  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 1    ;
+; Q.S2  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S3  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S4  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S5  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S6  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S7  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S8  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S9  ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S10 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S11 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S12 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S13 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S14 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S15 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
+; Q.S16 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 0    ; 1    ;
++-------+-------+-------+-------+-------+-------+-------+-------+------+------+------+------+------+------+------+------+------+------+------+------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |IITB_RISC|data_path:data|bootload:bootload_instance|control_bootload:control_path|Q ;
++--------+------+--------+--------+--------+--------+------+-------------------------------------------+
+; Name   ; Q.S4 ; Q.S3_2 ; Q.S3_1 ; Q.S2_2 ; Q.S2_1 ; Q.S1 ; Q.S0                                      ;
++--------+------+--------+--------+--------+--------+------+-------------------------------------------+
+; Q.S0   ; 0    ; 0      ; 0      ; 0      ; 0      ; 0    ; 0                                         ;
+; Q.S1   ; 0    ; 0      ; 0      ; 0      ; 0      ; 1    ; 1                                         ;
+; Q.S2_1 ; 0    ; 0      ; 0      ; 0      ; 1      ; 0    ; 1                                         ;
+; Q.S2_2 ; 0    ; 0      ; 0      ; 1      ; 0      ; 0    ; 1                                         ;
+; Q.S3_1 ; 0    ; 0      ; 1      ; 0      ; 0      ; 0    ; 1                                         ;
+; Q.S3_2 ; 0    ; 1      ; 0      ; 0      ; 0      ; 0    ; 1                                         ;
+; Q.S4   ; 1    ; 0      ; 0      ; 0      ; 0      ; 0    ; 1                                         ;
++--------+------+--------+--------+--------+--------+------+-------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c|Q ;
++---------------+-------------+-----------+---------------+------------------------------------------------------------------------------------+
+; Name          ; Q.valid_chk ; Q.receive ; Q.receive_chk ; Q.ready                                                                            ;
++---------------+-------------+-----------+---------------+------------------------------------------------------------------------------------+
+; Q.ready       ; 0           ; 0         ; 0             ; 0                                                                                  ;
+; Q.receive_chk ; 0           ; 0         ; 1             ; 1                                                                                  ;
+; Q.receive     ; 0           ; 1         ; 0             ; 1                                                                                  ;
+; Q.valid_chk   ; 1           ; 0         ; 0             ; 1                                                                                  ;
++---------------+-------------+-----------+---------------+------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++----------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                          ; Reason for Removal ;
++----------------------------------------------------------------------------------------+--------------------+
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:addr|Dout[15] ; Lost fanout        ;
+; Total Number of Removed Registers = 1                                                  ;                    ;
++----------------------------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 337   ;
+; Number of registers using Synchronous Clear  ; 35    ;
+; Number of registers using Synchronous Load   ; 40    ;
+; Number of registers using Asynchronous Clear ; 275   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 254   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                            ;
++---------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                             ; Fan out ;
++---------------------------------------------------------------------------------------------------------------+---------+
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|receive2             ; 6       ;
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|clk                  ; 25      ;
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|\clk_divide:count[6] ; 2       ;
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|\clk_divide:count[8] ; 2       ;
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|\clk_divide:count[0] ; 2       ;
+; data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|\clk_divide:count[2] ; 2       ;
+; Total number of inverted registers = 6                                                                        ;         ;
++---------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |IITB_RISC|data_path:data|my_reg:PC_reg|Dout[13]                                                                                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt2_reg|Dout[2] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|mux_7hb:mux2|l2_w0_n0_mux_dataout                   ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|control_path:control|nQ.S13                                                                                                               ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|register_file:rf|Mux3                                                                                                      ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|register_file:rf|Mux30                                                                                                     ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|ALU_B[14]                                                                                                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|ALU_A[14]                                                                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IITB_RISC|control_path:control|nQ.B0                                                                                                                ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|A3[2]                                                                                                                      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|ALU_B[6]                                                                                                                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |IITB_RISC|data_path:data|D3[10]                                                                                                                     ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |IITB_RISC|data_path:data|D3[4]                                                                                                                      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |IITB_RISC|data_path:data|D3[7]                                                                                                                      ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|A_DM[0]                                                                                                                    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |IITB_RISC|data_path:data|ls_multiple:pe_block|p_encoder:PE|output[2]                                                                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c|Selector1                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |IITB_RISC|data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c|Selector2                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |IITB_RISC|data_path:data|bootload:bootload_instance|control_bootload:control_path|nQ.S2_1                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:addr ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:dat ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:count ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:rx_reg ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_width     ; 1     ; Signed Integer                                                                                                                                      ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:data_reg ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_width     ; 10    ; Signed Integer                                                                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt1_reg ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_width     ; 4     ; Signed Integer                                                                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt2_reg ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_width     ; 3     ; Signed Integer                                                                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:instruction_register ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; word_length    ; 16    ; Signed Integer                                      ;
+; num_words      ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:0:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:1:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:2:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:3:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:4:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:5:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:6:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|register_file:rf|my_reg:\GEN_REG:7:REG ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|ls_multiple:pe_block ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; input_width    ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|ls_multiple:pe_block|p_encoder:PE ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; input_width    ; 8     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|ls_multiple:pe_block|my_reg:T ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; data_width     ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|sign_extend:sign_extend_1 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; input_width    ; 6     ; Signed Integer                                               ;
+; output_width   ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|sign_extend:sign_extend_2 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; input_width    ; 9     ; Signed Integer                                               ;
+; output_width   ; 16    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; word_length    ; 16    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0 ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; word_length    ; 16    ; Signed Integer                                                 ;
+; group_length   ; 4     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:0:CARRYX ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; group_length   ; 4     ; Signed Integer                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:1:CARRYX ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; group_length   ; 4     ; Signed Integer                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:2:CARRYX ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; group_length   ; 4     ; Signed Integer                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:3:CARRYX ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+; group_length   ; 4     ; Signed Integer                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|ram:mem|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                    ;
++------------------------------------+----------------------+-----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                 ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                 ;
+; WIDTH_A                            ; 16                   ; Signed Integer                          ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer                          ;
+; NUMWORDS_A                         ; 32768                ; Signed Integer                          ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_A                     ; CLEAR0               ; Untyped                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WIDTH_B                            ; 1                    ; Signed Integer                          ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                          ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                          ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                          ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                          ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                 ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; DONT_CARE            ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                          ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                          ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                 ;
+; CBXI_PARAMETER                     ; altsyncram_ksv3      ; Untyped                                 ;
++------------------------------------+----------------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:T1_Reg ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:T2_reg ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:Carry_CCR ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; data_width     ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:Zero_CCR ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; data_width     ; 1     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:Overflow_CCR ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; data_width     ; 1     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:E1_reg ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:E2_reg ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:PC_reg ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; data_width     ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_path:data|my_reg:B_flop ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; data_width     ; 1     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                   ;
++-------------------------------------------+--------------------------------------------------------+
+; Name                                      ; Value                                                  ;
++-------------------------------------------+--------------------------------------------------------+
+; Number of entity instances                ; 1                                                      ;
+; Entity Instance                           ; data_path:data|ram:mem|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                            ;
+;     -- WIDTH_A                            ; 16                                                     ;
+;     -- NUMWORDS_A                         ; 32768                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
+;     -- WIDTH_B                            ; 1                                                      ;
+;     -- NUMWORDS_B                         ; 0                                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
++-------------------------------------------+--------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|my_reg:E2_reg" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; ena  ; Input ; Info     ; Stuck at VCC                   ;
++------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|my_reg:E1_reg" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; ena  ; Input ; Info     ; Stuck at VCC                   ;
++------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|alu:alu_instance|adder:ADD0"                                                ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; cout[13..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|alu:alu_instance" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                      ;
++------+-------+----------+-----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|ls_multiple:pe_block"                                                 ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:rx_reg" ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
+; ena  ; Input ; Info     ; Stuck at VCC                                                                                                                      ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_path:data|bootload:bootload_instance"                                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; address[15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 337                         ;
+;     CLR               ; 33                          ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 187                         ;
+;     ENA CLR SCLR      ; 16                          ;
+;     ENA CLR SLD       ; 39                          ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 9                           ;
+;     SLD               ; 1                           ;
+;     plain             ; 40                          ;
+; arriav_lcell_comb     ; 529                         ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 18                          ;
+;         5 data inputs ; 14                          ;
+;     extend            ; 10                          ;
+;         7 data inputs ; 10                          ;
+;     normal            ; 487                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 81                          ;
+;         4 data inputs ; 43                          ;
+;         5 data inputs ; 118                         ;
+;         6 data inputs ; 186                         ;
+; boundary_port         ; 20                          ;
+; stratixv_ram_block    ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 5.23                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Sun Apr 17 00:34:56 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC_2022_Quartus -c RISC_2022
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 6 design units, including 3 entities, in source file uart_receive.vhd
+    Info (12022): Found design unit 1: uart_receive-receive File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 13
+    Info (12022): Found design unit 2: control_path_receive-control File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 88
+    Info (12022): Found design unit 3: data_path_receive-data File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 157
+    Info (12023): Found entity 1: uart_receive File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 5
+    Info (12023): Found entity 2: control_path_receive File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 80
+    Info (12023): Found entity 3: data_path_receive File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 148
+Info (12021): Found 2 design units, including 1 entities, in source file test_final.vhd
+    Info (12022): Found design unit 1: test_final-test File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/test_final.vhd Line: 10
+    Info (12023): Found entity 1: test_final File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/test_final.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file sign_extend.vhd
+    Info (12022): Found design unit 1: sign_extend-basic File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/sign_extend.vhd Line: 19
+    Info (12023): Found entity 1: sign_extend File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/sign_extend.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
+    Info (12022): Found design unit 1: register_file-trial File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/register_file.vhd Line: 22
+    Info (12023): Found entity 1: register_file File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/register_file.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: ram-SYN File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ram.vhd Line: 56
+    Info (12023): Found entity 1: ram File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ram.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file p_encoder.vhd
+    Info (12022): Found design unit 1: p_encoder-behave_ov File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/p_encoder.vhd Line: 20
+    Info (12023): Found entity 1: p_encoder File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/p_encoder.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file ls_multiple.vhd
+    Info (12022): Found design unit 1: ls_multiple-basic File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ls_multiple.vhd Line: 24
+    Info (12023): Found entity 1: ls_multiple File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ls_multiple.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file iitb_risc.vhd
+    Info (12022): Found design unit 1: IITB_RISC-ov File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/IITB_RISC.vhd Line: 15
+    Info (12023): Found entity 1: IITB_RISC File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/IITB_RISC.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file data_path.vhd
+    Info (12022): Found design unit 1: data_path-rtl File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 21
+    Info (12023): Found entity 1: data_path File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file control_path.vhd
+    Info (12022): Found design unit 1: control_path-fsm File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/control_path.vhd Line: 15
+    Info (12023): Found entity 1: control_path File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/control_path.vhd Line: 5
+Info (12021): Found 6 design units, including 3 entities, in source file bootload.vhd
+    Info (12022): Found design unit 1: bootload-uart File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 13
+    Info (12022): Found design unit 2: control_bootload-control File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 58
+    Info (12022): Found design unit 3: data_bootload-data File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 144
+    Info (12023): Found entity 1: bootload File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 5
+    Info (12023): Found entity 2: control_bootload File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 50
+    Info (12023): Found entity 3: data_bootload File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 134
+Info (12021): Found 2 design units, including 1 entities, in source file basic_primitive.vhd
+    Info (12022): Found design unit 1: my_reg_prim-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic_primitive.vhd Line: 13
+    Info (12023): Found entity 1: my_reg_prim File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic_primitive.vhd Line: 5
+Info (12021): Found 23 design units, including 11 entities, in source file basic.vhd
+    Info (12022): Found design unit 1: basic File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 11
+    Info (12022): Found design unit 2: decr4-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 103
+    Info (12022): Found design unit 3: fulladder-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 131
+    Info (12022): Found design unit 4: adder2Bit-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 154
+    Info (12022): Found design unit 5: adder8Bit-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 176
+    Info (12022): Found design unit 6: greater_than-Serial File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 199
+    Info (12022): Found design unit 7: equal_to-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 223
+    Info (12022): Found design unit 8: my_reg-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 249
+    Info (12022): Found design unit 9: Sub16-myOwn File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 279
+    Info (12022): Found design unit 10: clk_divider-divider File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 305
+    Info (12022): Found design unit 11: mux4-behave File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 334
+    Info (12022): Found design unit 12: mux8-behave File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 354
+    Info (12023): Found entity 1: decr4 File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 97
+    Info (12023): Found entity 2: fulladder File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 125
+    Info (12023): Found entity 3: adder2Bit File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 148
+    Info (12023): Found entity 4: adder8Bit File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 168
+    Info (12023): Found entity 5: greater_than File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 192
+    Info (12023): Found entity 6: equal_to File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 216
+    Info (12023): Found entity 7: my_reg File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 241
+    Info (12023): Found entity 8: Sub16 File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 272
+    Info (12023): Found entity 9: clk_divider File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 298
+    Info (12023): Found entity 10: mux4 File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 326
+    Info (12023): Found entity 11: mux8 File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/basic.vhd Line: 346
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-behave File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/alu.vhd Line: 23
+    Info (12023): Found entity 1: alu File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/alu.vhd Line: 14
+Info (12021): Found 7 design units, including 3 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: add File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 12
+    Info (12022): Found design unit 2: full_adder-basic File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 51
+    Info (12022): Found design unit 3: carry_generate-basic File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 72
+    Info (12022): Found design unit 4: adder-look_ahead File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 105
+    Info (12023): Found entity 1: full_adder File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 45
+    Info (12023): Found entity 2: carry_generate File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 64
+    Info (12023): Found entity 3: adder File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 94
+Info (12127): Elaborating entity "IITB_RISC" for the top level hierarchy
+Info (12128): Elaborating entity "data_path" for hierarchy "data_path:data" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/IITB_RISC.vhd Line: 48
+Info (12128): Elaborating entity "bootload" for hierarchy "data_path:data|bootload:bootload_instance" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 91
+Info (12128): Elaborating entity "data_bootload" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 34
+Info (12128): Elaborating entity "my_reg" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:addr" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 161
+Info (12128): Elaborating entity "my_reg" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|my_reg:count" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 177
+Info (12128): Elaborating entity "uart_receive" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 194
+Info (12128): Elaborating entity "data_path_receive" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 61
+Info (12128): Elaborating entity "my_reg_prim" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:rx_reg" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 173
+Info (12128): Elaborating entity "my_reg_prim" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:data_reg" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 182
+Info (12128): Elaborating entity "my_reg_prim" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt1_reg" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 192
+Info (12128): Elaborating entity "my_reg_prim" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|data_path_receive:d|my_reg_prim:cnt2_reg" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 202
+Info (12128): Elaborating entity "control_path_receive" for hierarchy "data_path:data|bootload:bootload_instance|data_bootload:data_path|uart_receive:reception|control_path_receive:c" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/uart_receive.vhd Line: 67
+Info (12128): Elaborating entity "control_bootload" for hierarchy "data_path:data|bootload:bootload_instance|control_bootload:control_path" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/bootload.vhd Line: 39
+Info (12128): Elaborating entity "register_file" for hierarchy "data_path:data|register_file:rf" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 173
+Info (12128): Elaborating entity "ls_multiple" for hierarchy "data_path:data|ls_multiple:pe_block" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 178
+Info (12128): Elaborating entity "p_encoder" for hierarchy "data_path:data|ls_multiple:pe_block|p_encoder:PE" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ls_multiple.vhd Line: 41
+Info (12128): Elaborating entity "sign_extend" for hierarchy "data_path:data|sign_extend:sign_extend_1" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 183
+Info (12128): Elaborating entity "sign_extend" for hierarchy "data_path:data|sign_extend:sign_extend_2" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 188
+Info (12128): Elaborating entity "alu" for hierarchy "data_path:data|alu:alu_instance" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 193
+Info (12128): Elaborating entity "adder" for hierarchy "data_path:data|alu:alu_instance|adder:ADD0" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/alu.vhd Line: 29
+Info (12128): Elaborating entity "full_adder" for hierarchy "data_path:data|alu:alu_instance|adder:ADD0|full_adder:\adder_element:0:ADDX" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 114
+Info (12128): Elaborating entity "carry_generate" for hierarchy "data_path:data|alu:alu_instance|adder:ADD0|carry_generate:\carry_element:0:CARRYX" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/adder.vhd Line: 121
+Info (12128): Elaborating entity "ram" for hierarchy "data_path:data|ram:mem" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 198
+Info (12128): Elaborating entity "altsyncram" for hierarchy "data_path:data|ram:mem|altsyncram:altsyncram_component" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ram.vhd Line: 63
+Info (12130): Elaborated megafunction instantiation "data_path:data|ram:mem|altsyncram:altsyncram_component" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ram.vhd Line: 63
+Info (12133): Instantiated megafunction "data_path:data|ram:mem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/ram.vhd Line: 63
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "UNUSED"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "32768"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "CLEAR0"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ksv3.tdf
+    Info (12023): Found entity 1: altsyncram_ksv3 File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/altsyncram_ksv3.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_ksv3" for hierarchy "data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated" File: c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_8la.tdf
+    Info (12023): Found entity 1: decode_8la File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/decode_8la.tdf Line: 23
+Info (12128): Elaborating entity "decode_8la" for hierarchy "data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|decode_8la:decode3" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/altsyncram_ksv3.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_11a.tdf
+    Info (12023): Found entity 1: decode_11a File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/decode_11a.tdf Line: 23
+Info (12128): Elaborating entity "decode_11a" for hierarchy "data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|decode_11a:rden_decode" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/altsyncram_ksv3.tdf Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_7hb.tdf
+    Info (12023): Found entity 1: mux_7hb File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/mux_7hb.tdf Line: 23
+Info (12128): Elaborating entity "mux_7hb" for hierarchy "data_path:data|ram:mem|altsyncram:altsyncram_component|altsyncram_ksv3:auto_generated|mux_7hb:mux2" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/db/altsyncram_ksv3.tdf Line: 47
+Info (12128): Elaborating entity "my_reg" for hierarchy "data_path:data|my_reg:Carry_CCR" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/data_path.vhd Line: 213
+Info (12128): Elaborating entity "control_path" for hierarchy "control_path:control" File: C:/Users/abhir/Documents/GitHub/RISC_2022/QUARTUS_FILES/IITB_RISC.vhd Line: 52
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 853 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 769 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4941 megabytes
+    Info: Processing ended: Sun Apr 17 00:35:11 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
+
+
