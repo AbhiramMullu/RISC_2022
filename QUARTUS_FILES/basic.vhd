@@ -1,8 +1,4 @@
--- Title				: Basic Logic Components 
--- Purpose				:
--- Brief Description	:
--- Author				: Shashank OV
--- Date					: Apr. 11, 2016 
+--components
 
 library ieee;
 use ieee.std_logic_1164.all;

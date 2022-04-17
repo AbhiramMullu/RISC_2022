@@ -1,9 +1,5 @@
--- Title				: Carry Look-Ahead Adder 
--- Purpose				:
--- Brief Description	:
--- Author				: Shashank OV
--- Date					: Oct. 8, 2016 
-
+--carry look ahead adder 16-bit
+--behavioural modellng
 
 library ieee;
 use ieee.std_logic_1164.all;

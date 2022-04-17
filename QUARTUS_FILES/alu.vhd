@@ -1,9 +1,4 @@
--- Title					: ALU for IITB-RISC 
--- Purpose				:
--- Brief Description	:
--- Author				: Shashank OV
--- Date					: Oct. 8, 2016 
-
+--ALU for IITB-RISC
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
